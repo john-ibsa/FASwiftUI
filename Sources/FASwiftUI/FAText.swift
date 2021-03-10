@@ -44,7 +44,7 @@ public struct FAText: View {
     
     public var body: some View {
         Text(icon.unicodeString)
-            .font(Font.custom(icon.collection.rawValue, size: size))
+            .font(Font.custom(icon.collection.rawValue, fixedSize: size))
             .fontWeight(weight)
     }
 }
