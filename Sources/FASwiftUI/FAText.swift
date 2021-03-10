@@ -43,8 +43,14 @@ public struct FAText: View {
     }
     
     public var body: some View {
-        Text(icon.unicodeString)
-            .font(Font.custom(icon.collection.rawValue, fixedSize: size))
-            .fontWeight(weight)
+        if #available(iOS 14.0, *) {
+            Text(icon.unicodeString)
+                .font(Font.custom(icon.collection.rawValue, fixedSize: size))
+                .fontWeight(weight)
+        } else {
+            Text(icon.unicodeString)
+                .font(Font.custom(icon.collection.rawValue, size: size))
+                .fontWeight(weight)
+        }
     }
 }
